@@ -20,7 +20,7 @@ myApp.controller('uploadFileController',['$scope', '$log', 'fileUpload', functio
        console.log('file is ' );
        console.dir(file);
 
-       var uploadUrl = "/fileUpload";
+       var uploadUrl = "/upload.php";
        fileUpload.uploadFileToUrl(file, uploadUrl);
     };
     
