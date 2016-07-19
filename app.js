@@ -8,7 +8,7 @@ myApp.config(function($routeProvider){
         templateUrl: 'pages/home.html',
         controller: 'uploadFileController'
     })
-    
+       
 });
 
 
@@ -20,7 +20,7 @@ myApp.controller('uploadFileController',['$scope', '$log', 'fileUpload', functio
        console.log('file is ' );
        console.dir(file);
 
-       var uploadUrl = "/upload.php";
+       var uploadUrl = "upload.php";
        fileUpload.uploadFileToUrl(file, uploadUrl);
     };
     
