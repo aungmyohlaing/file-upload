@@ -44,9 +44,8 @@ myApp.directive('uploadModel', ['$parse', function ($parse) {
                 });
               
                 scope.$apply(function () {
-                    if (isMultiple) {
-                        scope.filename = selectedfilename;
-                        console.log(selectedfilename);
+                    scope.filename = selectedfilename;  
+                    if (isMultiple) {                                             
                         modelSetter(scope, values);                       
                     } else {
                         modelSetter(scope, values[0]);
