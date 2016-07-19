@@ -13,15 +13,24 @@ myApp.config(function($routeProvider){
 
 
 myApp.controller('uploadFileController',['$scope', '$log', 'fileUpload', function($scope, $log, fileUpload){
-    
+     //$scope.myFile = [];
      $scope.uploadFileFunction = function(){
+       
        var file = $scope.myFile;
+       
 
-       console.log('file is ' );
-       console.dir(file);
-
+       //console.log('file is ' );
+       //console.dir(file);
+      
        var uploadUrl = "upload.php";
-       fileUpload.uploadFileToUrl(file, uploadUrl);
+         
+        for (var i= 0; i < file.length ; i++ )
+        {
+           
+            fileUpload.uploadFileToUrl(file[i], uploadUrl);
+            
+        }
+       
     };
     
 }]);
@@ -34,7 +43,7 @@ myApp.directive("fileModel", function() {
        replace: true,
        scope: {
            fileUploadImage: "=",
-           uploadFileFunction: "&"
+           uploadFileFunction: "&"           
        }
        
    }
